@@ -1,11 +1,10 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+
 //const logger = require("morgan");
 const mongoose = require("mongoose");
 
-// Require Schemas
-var Mixology = require("./model");
 
 //create instance of express
 const app = express();
@@ -27,21 +26,6 @@ app.use(bodyParser.text());
 app.use("/api", apiRoutes);
 
 
-// app.use(routes);
-
-
-
-// // Set up promises with mongoose
-// mongoose.Promise = global.Promise;
-// // Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/"
-//   {
-//     useMongoClient: true
-//   }
-// );
-
-
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -49,9 +33,6 @@ app.use("/api", apiRoutes);
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/public/index.html"));
-// });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
