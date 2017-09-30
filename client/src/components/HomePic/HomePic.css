@@ -1,0 +1,44 @@
+.home {
+  height: 550px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.home::after {
+  content: "";
+  display: block;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.home  * {
+  position: relative;
+  z-index: 2;
+}
+
+.home  h1, .home h2 {
+  color: white;
+}
+
+.home  h1 {
+  font-size: 60px;
+  padding-top: 140px;
+  margin-top: 0;
+}
+.home  h2 {
+  font-size: 50px;
+  padding-top: 140px;
+  margin-top: 0;
+}
+.home  p {
+  font-size: 80px;
+  padding-top: 20px;
+  margin-top: 10;
+}
