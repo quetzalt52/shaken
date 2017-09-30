@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
-import Nav from "../components/Nav";
-import Navbar from "../components/Navbar";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import API from "../utils/API";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
-//import landing from "./landing";
-//import home from "./page/home";
+import Home from "../pages/Home";
 
-class search extends Component {
+class Search extends Component {
   state = {
     recipes: [],
     recipeSearch: ""
@@ -36,7 +33,7 @@ class search extends Component {
   render() {
     return (
       <div>
-        <home />
+
           <Jumbotron />
             <Container>
               <Row>
@@ -93,4 +90,4 @@ class search extends Component {
     );
   }
 }
-export default search;
+export default Search;

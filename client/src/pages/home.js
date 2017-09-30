@@ -7,7 +7,7 @@ import HomePic from"../components/HomePic";
 
 //import assets from "./assets";
 
-class home extends React.Component {
+class Home extends React.Component {
   constructor() {
     super();
     this.state ={
@@ -63,4 +63,4 @@ class home extends React.Component {
     );
   }
 }
-export default home;
+export default Home;
