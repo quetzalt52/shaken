@@ -6,6 +6,7 @@ import Col from "../components/Col";
 import HomePic from"../components/HomePic";
 
 //import assets from "./assets";
+//i hate github sometimes
 
 class Home extends React.Component {
   constructor() {

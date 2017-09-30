@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import API from "../utils/API";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
-import Home from "../pages/Home";
+import Home from "../pages/home";
 
 class Search extends Component {
   state = {
