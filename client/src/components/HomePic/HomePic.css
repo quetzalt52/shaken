@@ -1,6 +1,5 @@
 .home {
-  height: 550px;
-  width: 100%;
+
   background-size: cover;
   background-position: center;
   position: relative;
@@ -33,12 +32,22 @@
   margin-top: 0;
 }
 .home  h2 {
-  font-size: 50px;
+  font-size: 30px;
   padding-top: 140px;
   margin-top: 0;
 }
 .home  p {
-  font-size: 80px;
-  padding-top: 20px;
-  margin-top: 10;
+  font-size: 0.75em;
+  padding-top: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.backgroundImage{
+  height: 450px;
+  width: 100%;
+}
+.g-signin2{
+  padding-top: 35px;
+  position: absolute;
+  left: 45%;
 }
