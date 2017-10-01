@@ -51,15 +51,17 @@ class Home extends React.Component {
                 </Row>
                 <Row>
                   <Col size="md-12">
-                    <Button
+                    {/* <Button
                       onClick= {this.state.text}
                       handleChange={this.handleChange }
                       type="warning"
                     > Enter
-                    </Button>
+                    </Button> */}
+                    <div className="g-signin2" data-onsuccess="onSignIn"></div>
                   </Col>
                 </Row>
             </Container>
+        
       </div>
     );
   }
