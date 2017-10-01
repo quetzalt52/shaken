@@ -4,7 +4,24 @@ const bodyParser = require("body-parser");
 
 //const logger = require("morgan");
 const mongoose = require("mongoose");
+const Index = require("./models/Index.js");
+// Set mongoose to leverage built in JavaScript ES6 Promises
+mongoose.Promise = Promise;
 
+// Database configuration with mongoose
+mongoose.connect("mongodb://localhost/recipelist");
+var db = mongoose.connection;
+
+// Show any mongoose errors
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
+  //foo
+});
+
+// Once logged in to the db through mongoose, log a success message
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
 
 //create instance of express
 const app = express();

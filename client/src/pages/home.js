@@ -1,29 +1,17 @@
 import React, { Component } from "react";
-import Button from "../components/Button";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import HomePic from"../components/HomePic";
 
-//import assets from "./assets";
-//i hate github sometimes
-
 class Home extends React.Component {
-  constructor() {
-    super();
-    this.state ={
-      value: null,
-    };
-  }
-
-  handleChange = event =>{
-    event.preventDefault();
-    {this.handleChange }
-    //this.setState({ this.state.value});
-  };
-
+    constructor() {
+      super();
+      this.state ={
+        value: null,
+      };
+    }
     render() {
-      //const img = "./assets/img/martini-drinks-main.jpg";
       return (
         <div>
           <HomePic />
@@ -50,18 +38,15 @@ class Home extends React.Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">
-                    <Button
-                      onClick= {this.state.text}
-                      handleChange={this.handleChange }
-                      type="warning"
-                    > Enter
-                    </Button>
+                  <Col size="md-12 text-center">
+
+                    <p className="g-signin2 text-center " data-onsuccess="onSignIn">
+                    </p>
                   </Col>
                 </Row>
-            </Container>
-      </div>
-    );
-  }
-}
+              </Container>
+            </div>
+          );
+        }
+      }
 export default Home;
