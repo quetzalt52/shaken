@@ -58,10 +58,10 @@ class Home extends React.Component {
                     > Enter
                     </Button> */}
                     <div className="g-signin2" data-onsuccess="onSignIn"></div>
+                    
                   </Col>
                 </Row>
             </Container>
-        
       </div>
     );
   }
