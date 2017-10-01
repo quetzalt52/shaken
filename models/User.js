@@ -1,37 +1,73 @@
-  // Require mongoose
-var mongoose = require("mongoose");
-// Create Schema class
-var Schema = mongoose.Schema;
+// 
 
-// Create article schema
-// var ArticleSchema = new Schema({
-var UserSchema = new Schema({
-  // title is a required string
-  userid: {
+var mongoose = require('mongoose');
+// var bcrypt = require('bcrypt');
+
+var UserSchema = new mongoose.Schema({
+  email: {
     type: String,
-    required: true
+    unique: true,
+    required: true,
+    trim: true
   },
-  // link is a required string
-  usernname: {
+  username: {
     type: String,
-    required: true
+    unique: true,
+    required: true,
+    trim: true
   },
-  userimage: {
+  // password: {
+  //   type: String,
+  //   required: true,
+  // },
+  // passwordConf: {
+  //   type: String,
+  //   required: true,
+  // }
+  imageURL: {
     type: String,
-    required: false
+    required: true,
   },
-  useremail: {
+  name: {
     type: String,
-    required: true
-  },
-  lastlogin: {
-    type : Date,
-    default : Date.now
+    required: true,
   }
 });
 
-// Create the Article model with the ArticleSchema
-var User = mongoose.model("User", UserSchema);
+// //authenticate input against database
+// UserSchema.statics.authenticate = function (email, password, callback) {
+//   User.findOne({ email: email })
+//     .exec(function (err, user) {
+//       if (err) {
+//         return callback(err)
+//       } else if (!user) {
+//         var err = new Error('User not found.');
+//         err.status = 401;
+//         return callback(err);
+//       }
+//       bcrypt.compare(password, user.password, function (err, result) {
+//         if (result === true) {
+//           return callback(null, user);
+//         } else {
+//           return callback();
+//         }
+//       })
+//     });
+// }
 
-// Export the model
+// //hashing a password before saving it to the database
+// UserSchema.pre('save', function (next) {
+//   var user = this;
+//   bcrypt.hash(user.password, 10, function (err, hash) {
+//     if (err) {
+//       return next(err);
+//     }
+//     user.password = hash;
+//     next();
+//   })
+// });
+
+
+var User = mongoose.model('User', UserSchema);
 module.exports = User;
+
