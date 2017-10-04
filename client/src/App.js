@@ -18,7 +18,6 @@ const App = () =>
         <Route exact path="/query" component={Query} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/listIngredients" component={ListIngredients} />
-
       </Wrapper>
       <Footer />
     </div>

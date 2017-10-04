@@ -1,7 +1,7 @@
 import axios from "axios";
 // Include the Axios library for HTTP requests
 
-const BaseURL ="http://addb.absolutdrinks.com/drinks/pennsylvania/?";
+const BaseURL ="http://addb.absolutdrinks.com/drinks/";
 //  API Key
 const APIKey = "de7934f82114431d8c7a617a36bb36de";
 
@@ -10,6 +10,7 @@ const APIKey = "de7934f82114431d8c7a617a36bb36de";
 // // It accepts a "query" or term to search the recipe api for
 export default {
   getRecipes: function(query) {
-    return axios.get("/api/recipes",BaseURL+query+APIKey);
+    return axios.get(BaseURL+query+"/?apiKey="+APIKey);
+    //http://addb.absolutdrinks.com/drinks/blue-moon/?apiKey=de7934f82114431d8c7a617a36bb36de
   }
 };

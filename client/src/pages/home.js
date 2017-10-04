@@ -16,7 +16,9 @@ class Home extends React.Component {
           <div >
             <HomePic / >
               <h1 className = "text-center" > Martini Cocktails and More < /h1>
+
                 <h2 className = "text-center" > Disclaimer < /h2>
+
                   <Container>
                     <Row >
                       <Col size = "md-12" >
@@ -37,15 +39,14 @@ class Home extends React.Component {
 
                         <p >
                         ABarAbove in no way supports, condones, or encourages the consumption of alcoholic beverages in excess, or any other form of alcohol abuse.The - Martini - Project is not liable
-                        for the use of its information by minors or or unlawful use or consumption of alcohol in any way. <
-                        /p>
+                        for the use of its information by minors or or unlawful use or consumption of alcohol in any way. </p>
                       </Col>
                     </Row>
                   <Row >
                   <Col size = "md-12 text-center" >
-                    <p className = "g-signin2 text-center "
+                    <div className = "g-signin2 text-center "
                       data-onsuccess = "onSignIn" >
-                    </p>
+                    </div>
                   </Col>
                 </Row>
               </Container>
