@@ -1,0 +1,15 @@
+/** {
+  outline:1px dotted red;
+}*/
+.center-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  flex-wrap: wrap;
+
+}
+.center-button button {
+  margin: 40px;
+
+}

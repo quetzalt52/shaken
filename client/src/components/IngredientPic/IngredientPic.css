@@ -1,5 +1,7 @@
-.jumbotron {
+
+.backgroundImage{
   min-height: 150px;
   max-height: 350px;
   padding-top: 0px;
+  width: 100%;
 }
