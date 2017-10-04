@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import API from "../utils/API";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
+import IngredientPic from "../components/IngredientPic";
 
 
 class ListIngredients extends Component {
@@ -34,10 +35,9 @@ class ListIngredients extends Component {
         return ( <
             div >
 
-            <
-            Jumbotron / >
-            <
-            Container >
+            
+            <IngredientPic />
+            <Container >
             <
             Row >
             <
