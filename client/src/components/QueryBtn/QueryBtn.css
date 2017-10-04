@@ -1,6 +1,7 @@
-.btn{
-  min-width: 0px;
-  display: inline-block;
-  padding: 9px, 18px;
+.btn-custom{
+  min-width: 0;
+  display: block;
+  padding: 0;
+  
   text-align: center;
 }
