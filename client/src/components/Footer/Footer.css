@@ -2,7 +2,6 @@
   min-height: 100px;
 
   position: relative;
-
 }
 
 .footer span {
@@ -10,6 +9,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px;
-  background: #B8B8B8;
+  padding: 5px;
+  background: #000000;
+  color:white ;
+  /* Box-model */
+  width: 100%;
+  margin-top: 30px;
 }

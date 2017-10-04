@@ -1,0 +1,7 @@
+.btn-custom{
+  min-width: 15%;
+  max-width: 33%;
+  display: block;
+  padding: 0;
+  text-align: center;
+}
