@@ -16,7 +16,7 @@ const recipeController = require("../controllers/recipeController.js");
 //routes go here
 module.exports = router
 .get("/recipeAll", recipeController.findAll)
-.get("/recipeName/:id", recipeController.findByName)
+.get("/recipeName/:name", recipeController.findByName)
 
 // router.route("/")
 //   .get(recipeController.findAll);

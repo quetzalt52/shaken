@@ -4,7 +4,6 @@ const db = require("../models/Recipe");
 //call-back functions
 module.exports = {
   findAll: function(req, res) {
-
     db
         .find({})
         // .then(dbModel => res.json(dbModel))
@@ -18,30 +17,34 @@ module.exports = {
   findByName: function(req, res) {
     db
       .findById(req.params.id)
-      .then(data => res.json(data))
+      // .then(data => res.json(data))
+      .then(function(data) {
+        console.log('findByName', req);
+        return res.json(data);
+      })
       .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
-    db
-      .create(req.body)
-      .then(data => res.json(data))
-      .catch(err => res.status(422).json(err));
-  },
-  // updateBand: function(req, res) {
+  // },
+  // create: function(req, res) {
   //   db
-  //     .findOneAndUpdate({
-  //       _id: req.params.id
-  //     }, req.body)
+  //     .create(req.body)
   //     .then(data => res.json(data))
   //     .catch(err => res.status(422).json(err));
   // },
-  remove: function(req, res) {
-    db
-      .findById({
-        _id: req.params.id
-      })
-      .then(data => data.remove())
-      .then(data => res.json(data))
-      .catch(err => res.status(422).json(err));
+  // // updateBand: function(req, res) {
+  // //   db
+  // //     .findOneAndUpdate({
+  // //       _id: req.params.id
+  // //     }, req.body)
+  // //     .then(data => res.json(data))
+  // //     .catch(err => res.status(422).json(err));
+  // // },
+  // remove: function(req, res) {
+  //   db
+  //     .findById({
+  //       _id: req.params.id
+  //     })
+  //     .then(data => data.remove())
+  //     .then(data => res.json(data))
+  //     .catch(err => res.status(422).json(err));
   }
 };

@@ -32,13 +32,13 @@ class Search extends Component {
   // };
 
   componentDidMount(){
-    API.getRecipe()
+    API.getOneRecipe()
         .then(res =>
-          // this.setState({
-          //   recipeAll:res.data//,
-          //   // filteredBands: res.data
-          // })
-        console.log(res.data)
+          this.setState({
+            recipeName:res.data//,
+            // filteredBands: res.data
+          })
+        // console.log(res.data)
         )
         .catch(err => console.log(err));
         // console.log(this.state);

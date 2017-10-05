@@ -19,8 +19,8 @@ import axios from 'axios';
 
 export default {
   //front end routes go here
-  getRecipe: function(testapijs) {
-    console.log(testapijs);
+  getRecipe: function() {
+    // console.log(testapijs);
     return axios.get("/recipeAll");
   },
   // postRecipeData: function(){
