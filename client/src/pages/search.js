@@ -22,13 +22,27 @@ class Search extends Component {
     });
   };
 
-  handleFormSubmit = event => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    event.preventDefault();
-    API.getRecipes(this.state.recipeSearch)
-      .then(res => this.setState({ recipes: res.data }))
-      .catch(err => console.log(err));
-  };
+  // handleFormSubmit = event => {
+  //   // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+  //   event.preventDefault();
+  //   API.getRecipe(this.state.recipeSearch)
+  //     .then(res => this.setState({ 
+  //       recipes: res.data }))
+  //     .catch(err => console.log(err));
+  // };
+
+  componentDidMount(){
+    API.getOneRecipe()
+        .then(res =>
+          this.setState({
+            recipeName:res.data//,
+            // filteredBands: res.data
+          })
+        // console.log(res.data)
+        )
+        .catch(err => console.log(err));
+        // console.log(this.state);
+  }
 
   render() {
     return (
@@ -73,11 +87,11 @@ class Search extends Component {
                       {this.state.recipes.map(recipe => {
                         return (
                           <RecipeListItem
-                            key={recipe.title}
-                            title={recipe.title}
-                            href={recipe.href}
-                            ingredients={recipe.ingredients}
-                            thumbnail={recipe.thumbnail}
+                            key={recipe.name}
+                            title={recipe.name}
+                            href={recipe.videos[0].video}
+                            ingredients={recipe.ingredients[0].textPlain} ///loop through the array here
+                        
                           />
                         );
                       })}
