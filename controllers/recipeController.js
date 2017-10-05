@@ -4,15 +4,20 @@ const db = require("../models/Recipe");
 //call-back functions
 module.exports = {
   findAll: function(req, res) {
+    // console.log("reached back end");
     db
         .find({})
-        // .then(dbModel => res.json(dbModel))
-        .then(function(data) {
-          console.log('TEST', data); //look for syntx for find
-          return res.json(data)
-        })
+        //   if(err){
+        //     console.log(err);
+        //   }else if(data){
+        //     console.log("data",data);
+        //   }
+
+        // })
+        .then(data => res.json(data))
+        // .then(res => console.log(res))
         .catch(err => res.status(422).json(err));
-    console.log(req.body);
+    // console.log(req.body);
   },
   findByName: function(req, res) {
     db

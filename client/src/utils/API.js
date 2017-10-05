@@ -29,5 +29,8 @@ export default {
   getOneRecipe: function(recipe_id){
     // console.log("this is the bands real id: ", band_id);
     return axios.get("/recipeName/" + recipe_id);
+  },
+  getDogs: function(){
+    return axios.get("https://dog.ceo/api/breeds/list/all")
   }
 };

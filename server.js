@@ -10,7 +10,6 @@ const compression = require('compression');
 const helmet = require('helmet');
 
 const Index = require("./models/Index.js");
-
 //create instance of express
 const app = express();
 app.use(helmet());
@@ -24,7 +23,13 @@ const mongoose = require("mongoose");
 mongoose.Promise = Promise;
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/recipelist");
+// mongoose.connect("mongodb://localhost/recipelist");
+mongoose.connect(
+  "mongodb://localhost/recipelist",
+  {
+    useMongoClient: true
+  }
+);
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -48,7 +53,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(expressValidator() ); // Add this after the bodyParser middleware!
 app.use(cookieParser());
-app.use(compression()); //Compress all routes
+// app.use(compression()); //Compress all routes
 
 // Use apiRoutes
 // app.use("/", apiRoutes);
