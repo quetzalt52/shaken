@@ -32,16 +32,18 @@ class Search extends Component {
   // };
 
   componentDidMount(){
-    API.getOneRecipe()
-        .then(res =>
-          this.setState({
-            recipeName:res.data//,
-            // filteredBands: res.data
-          })
+    console.log("update working");
+    API.getRecipe()
+        .then(res => this.setState({
+            recipes: res.data
+        }))
         // console.log(res.data)
-        )
         .catch(err => console.log(err));
         // console.log(this.state);
+
+    // API.getDogs()
+    //       .then(res => console.log(res))
+    //       .catch(err => console.log(err));
   }
 
   render() {

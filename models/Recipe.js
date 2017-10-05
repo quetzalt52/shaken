@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 // Create article schema
 // var ArticleSchema = new Schema({
 const RecipeSchema = new Schema({
-  description : {
+  description: {
     type: String,
     required: false
   },
@@ -41,15 +41,15 @@ const RecipeSchema = new Schema({
             required: false
           }
       },
-  id : {
+  id: {
     type: String,
     required: true
   },
-  name : {
+  name: {
     type: String,
     required: true
   },
-  descriptionPlain : {
+  descriptionPlain: {
     type: String,
     required: true
   }//,
