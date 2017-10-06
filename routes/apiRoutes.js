@@ -1,4 +1,4 @@
-const axios = require("axios");
+// const axios = require("axios");
 const router = require("express").Router();
 
 //require the controller
@@ -16,7 +16,7 @@ const recipeController = require("../controllers/recipeController.js");
 //routes go here
 module.exports = router
 .get("/recipeAll", recipeController.findAll)
-.get("/recipeName/:name", recipeController.findByName)
+.get("/recipeByName/:name", recipeController.findRByName)
 
 // router.route("/")
 //   .get(recipeController.findAll);

@@ -21,13 +21,9 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
-<<<<<<< HEAD
-    "cors": "^2.8.4",
-=======
     "compression": "^1.7.1",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
->>>>>>> 8b5f710f60e4ba88f6398c293d89bd78a00d3b67
     "express": "^4.15.4",
     "express-validator": "^4.2.1",
     "helmet": "^3.8.2",

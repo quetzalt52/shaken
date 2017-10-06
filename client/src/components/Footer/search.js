@@ -77,7 +77,6 @@ class Search extends Component {
                             title={recipe.title}
                             href={recipe.href}
                             ingredients={recipe.ingredients}
-                            thumbnail={recipe.thumbnail}
                           />
                         );
                       })}

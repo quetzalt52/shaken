@@ -3,6 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import API from "../utils/API";
+import Video from "./video";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
 
@@ -22,26 +23,31 @@ class Search extends Component {
     });
   };
 
-  // handleFormSubmit = event => {
-  //   // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-  //   event.preventDefault();
-  //   API.getRecipe(this.state.recipeSearch)
-  //     .then(res => this.setState({ 
-  //       recipes: res.data }))
-  //     .catch(err => console.log(err));
-  // };
+  handleFormSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+      console.log(this.state.recipeSearch);
+    API.getRecipeByName(this.state.recipeSearch)
+      .then(res => {
+        console.log("getRecipeByName response", res.data);
+        this.setState({ 
+        recipes: res.data })})
+      .catch(err => console.log(err));
+  };
 
   componentDidMount(){
-    API.getOneRecipe()
-        .then(res =>
-          this.setState({
-            recipeName:res.data//,
-            // filteredBands: res.data
-          })
+    console.log("update working");
+    API.getRecipe()
+        .then(res => this.setState({
+            recipes: res.data
+        }))
         // console.log(res.data)
-        )
         .catch(err => console.log(err));
         // console.log(this.state);
+
+    // API.getDogs()
+    //       .then(res => console.log(res))
+    //       .catch(err => console.log(err));
   }
 
   render() {
@@ -86,13 +92,16 @@ class Search extends Component {
                     <RecipeList>
                       {this.state.recipes.map(recipe => {
                         return (
-                          <RecipeListItem
-                            key={recipe.name}
-                            title={recipe.name}
-                            href={recipe.videos[0].video}
-                            ingredients={recipe.ingredients[0].textPlain} ///loop through the array here
-                        
-                          />
+                          <div>
+                            <RecipeListItem
+                              key={recipe.name}
+                              title={recipe.name}
+                              href={recipe.videos[0].video}
+                              ingredients={recipe.ingredients} ///loop through the array here
+                              instructions={recipe.descriptionPlain}
+                            />
+                            <Video videoId={recipe.videos[0].video} />
+                          </div>
                         );
                       })}
                     </RecipeList>
