@@ -28,28 +28,23 @@ module.exports = {
         return res.json(data);
       })
       .catch(err => res.status(422).json(err));
-  // },
-  // create: function(req, res) {
-  //   db
-  //     .create(req.body)
-  //     .then(data => res.json(data))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // // updateBand: function(req, res) {
-  // //   db
-  // //     .findOneAndUpdate({
-  // //       _id: req.params.id
-  // //     }, req.body)
-  // //     .then(data => res.json(data))
-  // //     .catch(err => res.status(422).json(err));
-  // // },
-  // remove: function(req, res) {
-  //   db
-  //     .findById({
-  //       _id: req.params.id
-  //     })
-  //     .then(data => data.remove())
-  //     .then(data => res.json(data))
-  //     .catch(err => res.status(422).json(err));
+  },
+  findRByName: function(req, res) {
+    console.log(req.params.name);
+    db
+      .find({name: req.params.name}).then(function(data){
+        res.json(data);
+      })
+      .catch(err => res.status(422).json(err));
+      //   if (err) return err;
+      //   // console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<', recipe);
+      //   console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', recipe.toJSON());
+      //   return res.end(recipe.toJSON());
+      // })
+      // // .then(function(recipe) {
+      // //   // console.log('findRByName', req);
+      // //   console.log(recipe.toJSON());
+      // //   return res.end(recipe.toJSON());
+      // // })
   }
 };

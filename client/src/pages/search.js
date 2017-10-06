@@ -3,6 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import API from "../utils/API";
+import Video from "./video";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
 import Video from "../components/Video";
@@ -23,14 +24,17 @@ class Search extends Component {
     });
   };
 
-  // handleFormSubmit = event => {
-  //   // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-  //   event.preventDefault();
-  //   API.getRecipe(this.state.recipeSearch)
-  //     .then(res => this.setState({ 
-  //       recipes: res.data }))
-  //     .catch(err => console.log(err));
-  // };
+  handleFormSubmit = event => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+      console.log(this.state.recipeSearch);
+    API.getRecipeByName(this.state.recipeSearch)
+      .then(res => {
+        console.log("getRecipeByName response", res.data);
+        this.setState({ 
+        recipes: res.data })})
+      .catch(err => console.log(err));
+  };
 
   componentDidMount(){
     console.log("update working");
@@ -89,13 +93,15 @@ class Search extends Component {
                     <RecipeList>
                       {this.state.recipes.map(recipe => {
                         return (
-                          <RecipeListItem
-                            key={recipe.name}
-                            title={recipe.name}
-                            href={recipe.videos[0].video}
-                            ingredients={recipe.ingredients} ///loop through the array here
-                        
-                          />
+                          <div>
+                            <RecipeListItem
+                              key={recipe.name}
+                              title={recipe.name}
+                              href={recipe.videos[0].video}
+                              ingredients={recipe.ingredients} ///loop through the array here
+                            />
+                            <Video videoId={recipe.videos[0].video} />
+                          </div>
                         );
                       })}
                     </RecipeList>

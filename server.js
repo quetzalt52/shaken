@@ -58,6 +58,9 @@ app.use(cookieParser());
 // Use apiRoutes
 // app.use("/", apiRoutes);
 app.use(apiRoutes);
+app.get('/api/test', function(req, res) {
+  res.json({'hey': 'hey'});
+})
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
