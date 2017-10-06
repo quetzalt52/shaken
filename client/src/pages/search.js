@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import API from "../utils/API";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
+import Video from "../components/Video";
 
 
 class Search extends Component {
@@ -92,7 +93,7 @@ class Search extends Component {
                             key={recipe.name}
                             title={recipe.name}
                             href={recipe.videos[0].video}
-                            ingredients={recipe.ingredients[0].textPlain} ///loop through the array here
+                            ingredients={recipe.ingredients} ///loop through the array here
                         
                           />
                         );
