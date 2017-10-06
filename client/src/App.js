@@ -4,6 +4,8 @@ import Home from "./pages/home";
 import Search from "./pages/search";
 import ListIngredients from "./pages/listIngredients";
 import Query from "./pages/query";
+import Video from "./pages/video";
+import VideoSearch from "./pages/videoSearch";
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
 import Footer from "./components/Footer";
@@ -18,6 +20,8 @@ const App = () =>
         <Route exact path="/query" component={Query} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/listIngredients" component={ListIngredients} />
+        <Route exact path="/video" component={Video} />
+        <Route exact path="/videoSearch" component={VideoSearch} />
       </Wrapper>
       <Footer />
     </div>
