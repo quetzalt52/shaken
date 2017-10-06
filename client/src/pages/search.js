@@ -98,6 +98,7 @@ class Search extends Component {
                               title={recipe.name}
                               href={recipe.videos[0].video}
                               ingredients={recipe.ingredients} ///loop through the array here
+                              instructions={recipe.descriptionPlain}
                             />
                             <Video videoId={recipe.videos[0].video} />
                           </div>

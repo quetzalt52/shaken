@@ -10,6 +10,7 @@ const compression = require('compression');
 const helmet = require('helmet');
 
 const Index = require("./models/Index.js");
+
 //create instance of express
 const app = express();
 app.use(helmet());
@@ -53,14 +54,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(expressValidator() ); // Add this after the bodyParser middleware!
 app.use(cookieParser());
-// app.use(compression()); //Compress all routes
 
 // Use apiRoutes
 // app.use("/", apiRoutes);
 app.use(apiRoutes);
-app.get('/api/test', function(req, res) {
-  res.json({'hey': 'hey'});
-})
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

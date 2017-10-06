@@ -1,4 +1,4 @@
-// Require mongoose
+/ Require mongoose
 //foo
 const mongoose = require("mongoose");
 // Create Schema class
