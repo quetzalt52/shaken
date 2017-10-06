@@ -6,6 +6,23 @@ import query from "./query.css";
 
 
 class Query extends React.Component {
+  constructor(){
+   super();
+   this.state = {
+
+   }
+ }
+
+ goSearchForDrink = (e) => {
+   e.preventDefault();
+   window.location.pathname = "/search";
+ }
+
+ goSearchForIngredient = (e) => {
+   e.preventDefault();
+   window.location.pathname = "/listIngredients";
+ }
+
   render() {
     return (
       <div>
@@ -13,14 +30,14 @@ class Query extends React.Component {
         <h1 className="text-center">Please make a Selection</h1>
         <div className="center-button">
               <Button
-                onClick={this.handleFormSubmit}
+                onClick={this. goSearchForDrink }
                 type="warning"
                 className="input-lg btn-custom"
                 >  Search By Name
                </Button>
 
               <Button
-                onClick={this.handleFormSubmit}
+                onClick={this.goSearchForIngredient}
                 type="warning"
                 className="input-lg btn-custom"
                 >  Search By ingredients
