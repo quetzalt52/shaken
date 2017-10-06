@@ -6,6 +6,7 @@ import API from "../utils/API";
 import Video from "./video";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
+import Video from "../components/Video";
 
 
 class Search extends Component {
