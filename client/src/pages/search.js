@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
+import SearchPic from "../components/SearchPic";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import API from "../utils/API";
@@ -30,7 +30,7 @@ class Search extends Component {
     API.getRecipeByName(this.state.recipeSearch)
       .then(res => {
         console.log("getRecipeByName response", res.data);
-        this.setState({ 
+        this.setState({
         recipes: res.data })})
       .catch(err => console.log(err));
   };
@@ -54,7 +54,7 @@ class Search extends Component {
     return (
       <div>
 
-          <Jumbotron />
+          <SearchPic />
             <Container>
               <Row>
                 <Col size="md-12">
